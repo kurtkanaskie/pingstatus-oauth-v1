@@ -1,0 +1,14 @@
+{
+    "apiconfig": {
+        "domain": "kurtkanaskietrainer-trial-test.apigee.net",
+        "basepath": "/pingstatus-baas/v1",
+        "apiproxy": "pingstatus-baas-v1",
+		"clientId": "REPLACE-CLIENTID",
+        "clientSecret": "REPLACE-CLIENTSECRET",
+        "invalidClientId": "REPLACE-INVALID-CLIENTID",
+        "oauthDomain": "kurtkanaskietrainer-trial-test.apigee.net",
+        "oauthBasepath": "/oauth-baas/v1",
+        "userUsername" : "REPLACE-USERNAME",
+        "userPassword" : "REPLACE-PASSWORD"
+    }
+}

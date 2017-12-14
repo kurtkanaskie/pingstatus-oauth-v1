@@ -1,0 +1,103 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Ping Status BaaS",
+        "version": "1.0.0",
+        "title": "pingstatus-baas-v1",
+        "contact": {
+            "email": "kurtkanaskie@google.com"
+        }
+    },
+    "host": "kurtkanaskietrainer-trial-test.apigee.net",
+    "basePath": "/pingstatus-baas/v1",
+    "schemes": [
+        "https"
+    ],
+    "securityDefinitions": {
+        "OauthSecurity": {
+            "type": "oauth2",
+            "flow": "password",
+            "tokenUrl": "https://kurtkanaskietrainer-trial-test.apigee.net/oauth-baas/v1/token",
+            "scopes": {
+                "user": "User scope"
+            }
+        }
+    },
+    "security": [{
+        "OauthSecurity": ["user"]
+    }],
+    "parameters" : { },
+    "consumes": [],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/ping": {
+            "get": {
+                "operationId": "get-ping",
+                "description": "Returns a message indicating the API proxy is operational",
+                "parameters": [
+                    { "in": "header", "name": "X-APIKey", "description": "Application Identifier also known as API Key", "required": true, "type": "string", "default": "N7w0EUQpifRDYCSpWs6tnUt8jYr6JZbl" }
+                ],
+                "responses": {
+                    "200": { "description": "OK", "schema": { "$ref": "#/definitions/PingResponse" } },
+                    "400": { "description": "Bad Request" },
+                    "401": { "description": "Unauthorized" }
+                },
+                "deprecated": false
+            }
+        },
+        "/status": {
+            "get": {
+                "operationId": "get-status",
+                "description": "Returns a message indicating the API proxy and back end is operational",
+                "parameters": [
+                    { "in": "header", "name": "X-APIKey", "description": "Application Identifier also known as API Key", "required": true, "type": "string", "default": "N7w0EUQpifRDYCSpWs6tnUt8jYr6JZbl" }
+                ],
+                "responses": {
+                    "200": { "description": "OK", "schema": { "$ref": "#/definitions/StatusResponse" } },
+                    "400": { "description": "Bad Request" },
+                    "401": { "description": "Unauthorized" }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "code": { "description": "Error code", "type": "string" },
+                "message": { "description": "Error message", "type": "string" },
+                "info": { "description": "Where to find more inforamation", "type": "string" },
+                "detail": { "description": "Detail error information", "type": "string" }
+            }
+        },
+        "PingResponse": {
+            "type": "object",
+            "properties": {
+                "environment": { "description": "The name of the environment", "type": "string" },
+                "apiproxy": { "description": "The name of the API Proxy", "type": "string" },
+                "client": { "description": "The IP address of the client calling the API", "type": "string" },
+                "time": { "description": "The time when the request was processed", "type": "string" },
+                "latency": { "description": "The total response time to process the API request", "type": "string" },
+                "message": { "description": "Message from the endpoint, gaurenteed to be PONG", "type": "string" },
+                "merchantId": { "description": "The Merchant Identifier provided in the request header", "type": "string" }
+            }
+        },
+        "StatusResponse": {
+            "type": "object",
+            "properties": {
+                "environment": { "description": "The name of the environment", "type": "string" },
+                "apiproxy": { "description": "The name of the API Proxy", "type": "string" },
+                "client": { "description": "The IP address of the client calling the API", "type": "string" },
+                "time": { "description": "The time when the request was processed", "type": "string" },
+                "proxyLatency": { "description": "The time in milli-seconds for the front end to process the API request", "type": "string" },
+                "targetLatency": { "description": "The time in milli-seconds for the back end to process the API request", "type": "string" },
+                "latency": { "description": "The total response time to process the API request", "type": "string" },
+                "message": { "description": "Message from the endpoint, gaurenteed to be STATUS", "type": "string" },
+                "backendMessage": { "description": "Message recieved from the back end typically including an non-descript tag and date information", "type": "string" },
+                "merchantId": { "description": "The Merchant Identifier provided in the request header", "type": "string" }
+            }
+        }
+    }
+}

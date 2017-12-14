@@ -1,0 +1,112 @@
+[
+  {
+    "name": "pingstatus-baas-v1-app-test",
+    "credentials": [
+      {
+        "consumerKey": "586ByccjanFsEdDefEB1pOQBQw57B4tA",
+        "consumerSecret": "597D9SNQQkONJz5d",
+        "apiProducts": [
+          {
+            "apiproduct": "pingstatus-baas-v1-product-test"
+          }
+        ]
+      },
+      {
+        "consumerKey": "Rwe72uby0halOmJa0G4TDDiKmUR4P3lG",
+        "consumerSecret": "oDkBczlw0axxfmwj",
+        "apiProducts": [
+          {
+            "apiproduct": "pingstatus-baas-v1-product-test"
+          }
+        ]
+      },
+      {
+        "consumerKey": "glFYNfnhiopMGur61Ymht3Qyyu03BuFi",
+        "consumerSecret": "7FGcqCGd1jqWdqCP",
+        "apiProducts": [
+          {
+            "apiproduct": "pingstatus-baas-v1-product-test"
+          }
+        ]
+      },
+      {
+        "consumerKey": "jbUeeCUYSW40UFpLSlGhLfTUCgjClApR",
+        "consumerSecret": "DN9GGp2j45kbBdfZ",
+        "apiProducts": [
+          {
+            "apiproduct": "pingstatus-baas-v1-product-test"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "pingstatus-baas-v1-app-prod",
+    "credentials": [
+      {
+        "consumerKey": "2q3rCkKWzGw5TIdHHGIHi0zGEKarfNHa",
+        "consumerSecret": "1jgX04WYAzwJQatt",
+        "apiProducts": [
+          {
+            "apiproduct": "pingstatus-baas-v1-product-prod"
+          }
+        ]
+      },
+      {
+        "consumerKey": "G1RDKYmMGiGRkOG2n3KDGLby0s8aQWzY",
+        "consumerSecret": "u4aDAhWjs8Slzp9j",
+        "apiProducts": [
+          {
+            "apiproduct": "pingstatus-baas-v1-product-prod"
+          }
+        ]
+      },
+      {
+        "consumerKey": "QsC48t3mPCakTu4rkinMEYNC4qJ3BkZ4",
+        "consumerSecret": "4R1foeDRA11fuDg6",
+        "apiProducts": [
+          {
+            "apiproduct": "pingstatus-baas-v1-product-prod"
+          }
+        ]
+      },
+      {
+        "consumerKey": "jhE42cwveDRE2Hi9PcLDEwZJz0UO4sAj",
+        "consumerSecret": "JGe4y8ZCWAl0GGGZ",
+        "apiProducts": [
+          {
+            "apiproduct": "pingstatus-baas-v1-product-prod"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "edgemicro_hello",
+    "credentials": [
+      {
+        "consumerKey": "WmihrGTLeR47XAyGyRkyTct1sMuHLsG2",
+        "consumerSecret": "hU2oj8hWvqdAchkS",
+        "apiProducts": [
+          {
+            "apiproduct": "edgemicro_hello"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "edgemicro_pingstatus",
+    "credentials": [
+      {
+        "consumerKey": "15KLjAQbhGAa4BUiPI8RERGM57JVbQXQ",
+        "consumerSecret": "FEh1fPmWJI1AXRul",
+        "apiProducts": [
+          {
+            "apiproduct": "edgemicro_pingstatus"
+          }
+        ]
+      }
+    ]
+  }
+]
