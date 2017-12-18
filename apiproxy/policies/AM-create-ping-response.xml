@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <AssignMessage async="false" continueOnError="false" enabled="true" name="AM-create-ping-response">
     <DisplayName>AM-create-ping-response</DisplayName>
-    <Foo>foo</Foo>
-    <Properties><Foo>foo</Foo></Properties>
     <Set>
         <Payload contentType="application/json">
 {

@@ -3,12 +3,11 @@
         "domain": "kurtkanaskietrainer-trial-test.apigee.net",
         "basepath": "/pingstatus-baas/v1",
         "apiproxy": "pingstatus-baas-v1",
-		"clientId": "REPLACE-CLIENTID",
-        "clientSecret": "REPLACE-CLIENTSECRET",
-        "invalidClientId": "REPLACE-INVALID-CLIENTID",
-        "oauthDomain": "kurtkanaskietrainer-trial-test.apigee.net",
+		"oauthDomain": "kurtkanaskietrainer-trial-test.apigee.net",
         "oauthBasepath": "/oauth-baas/v1",
         "userUsername" : "REPLACE-USERNAME",
-        "userPassword" : "REPLACE-PASSWORD"
+        "userPassword" : "REPLACE-PASSWORD",
+        "product":"pingstatus-baas-v1-product-test",
+        "app":"pingstatus-baas-v1-app-test"
     }
 }

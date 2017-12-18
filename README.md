@@ -229,3 +229,4 @@ mvn -Ptest install -Ddeployment.suffix= -Dapigee.config.options=update -Dapi.tes
 
 Export App keys
 mvn -Ptest apigee-config:exportAppKeys -Dapigee.config.exportDir=./appkeys
+mvn -Ptraining-test process-resources -Ddeployment.suffix= -Dapi.testtag=@health apigee-config:exportAppKeys -Dapigee.config.exportDir=target/test/integration exec:exec@integration -Dapi.testtag=@get-ping

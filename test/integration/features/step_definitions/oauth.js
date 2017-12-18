@@ -6,7 +6,6 @@ module.exports = function () {
     this.Given(/^I have a valid client_credentials access token$/, function (callback) {
         var oauthDomain = this.apickli.scenarioVariables["oauthDomain"];
         var oauthBasepath = this.apickli.scenarioVariables["oauthBasepath"];
-
         var clientId = this.apickli.scenarioVariables["clientId"];
         var clientSecret = this.apickli.scenarioVariables["clientSecret"];
         
@@ -34,9 +33,9 @@ module.exports = function () {
     this.Given(/^I have a valid password access token$/, function (callback) {
         var oauthDomain = this.apickli.scenarioVariables["oauthDomain"];
         var oauthBasepath = this.apickli.scenarioVariables["oauthBasepath"];
-
         var clientId = this.apickli.scenarioVariables["clientId"];
         var clientSecret = this.apickli.scenarioVariables["clientSecret"];
+
         var userUsername = this.apickli.scenarioVariables["userUsername"];
         var userPassword = this.apickli.scenarioVariables["userPassword"];
         

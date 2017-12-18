@@ -51,8 +51,6 @@
 				<apigee.authtype>oauth</apigee.authtype>
 				<api.northbound.domain>${env.API_DOMAIN_TEST}</api.northbound.domain>
 				<api.testtag>~@intg,~@health,~@wip,~@mock</api.testtag>
-				<clientId>586ByccjanFsEdDefEB1pOQBQw57B4tA</clientId>
-				<clientSecret>597D9SNQQkONJz5d</clientSecret>
 				<userUsername>demouser</userUsername>
 				<userPassword>demouser1</userPassword>
 			</properties>
@@ -70,12 +68,10 @@
 				<apigee.authtype>oauth</apigee.authtype>
 				<api.northbound.domain>${env.API_DOMAIN_PROD}</api.northbound.domain>
 				<api.testtag>~@health</api.testtag>
-				<clientId>G1RDKYmMGiGRkOG2n3KDGLby0s8aQWzY</clientId>
-				<clientSecret>u4aDAhWjs8Slzp9j</clientSecret>
 				<userUsername>demouser</userUsername>
 				<userPassword>demouser1</userPassword>
 			</properties>
-		</profile>	
+		</profile>
 	</profiles>
 
 	<build>
@@ -185,24 +181,20 @@
 							<value>commit ${commit} from ${branch} branch by ${user.name}</value>
 						</replacement>
 						<replacement>
-							<token>REPLACE-CLIENTID</token>
-							<value>${clientId}</value>
-						</replacement>
-						<replacement>
-							<token>REPLACE-CLIENTSECRET</token>
-							<value>${clientSecret}</value>
-						</replacement>
-						<replacement>
-							<token>REPLACE-INVALID-CLIENTID</token>
-							<value>${invalidClientId}</value>
-						</replacement>
-						<replacement>
 							<token>REPLACE-USERNAME</token>
 							<value>${userUsername}</value>
 						</replacement>
 						<replacement>
 							<token>REPLACE-PASSWORD</token>
 							<value>${userPassword}</value>
+						</replacement>
+						<replacement>
+							<token>pingstatus-baas-v1-product-test</token>
+							<value>pingstatus-baas-v1-product-${apigee.env}</value>
+						</replacement>
+						<replacement>
+							<token>pingstatus-baas-v1-app-test</token>
+							<value>pingstatus-baas-v1-app-${apigee.env}</value>
 						</replacement>
 					</replacements>
 				</configuration>
@@ -232,57 +224,64 @@
 			</plugin>
 
 			<!-- Configuration -->
-            <plugin>
-                <groupId>com.apigee.edge.config</groupId>
-                <artifactId>apigee-config-maven-plugin</artifactId>
-                <version>1.2.1</version>
-                <executions>
-                    <execution>
-                        <id>create-config-cache</id>
-                        <phase>verify</phase>                        
-                        <goals>
-                            <goal>caches</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>create-config-targetserver</id>
-                        <phase>verify</phase>                        
-                        <goals>
-                            <goal>targetservers</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>create-config-kvm</id>
-                        <phase>verify</phase>                        
-                        <goals>
-                            <goal>keyvaluemaps</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>create-config-apiproduct</id>
-                        <phase>install</phase>                        
-                        <goals>
-                            <goal>apiproducts</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>create-config-developer</id>
-                        <phase>install</phase>                        
-                        <goals>
-                            <goal>developers</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>create-config-app</id>
-                        <phase>install</phase>                        
-                        <goals>
-                            <goal>apps</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>   
+			<plugin>
+				<groupId>com.apigee.edge.config</groupId>
+				<artifactId>apigee-config-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<id>create-config-cache</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>caches</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>create-config-targetserver</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>targetservers</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>create-config-kvm</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>keyvaluemaps</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>create-config-apiproduct</id>
+						<phase>install</phase>
+						<goals>
+							<goal>apiproducts</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>create-config-developer</id>
+						<phase>install</phase>
+						<goals>
+							<goal>developers</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>create-config-app</id>
+						<phase>install</phase>
+						<goals>
+							<goal>apps</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>export-config-app</id>
+						<phase>install</phase>
+						<goals>
+							<goal>exportAppKeys</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>   
 
-            <plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.3.2</version>
@@ -351,58 +350,58 @@
 			<!-- run performance tests -->
 			<!--
 			<plugin>
-                <groupId>com.lazerycode.jmeter</groupId>
-                <artifactId>jmeter-maven-plugin</artifactId>
-                <version>2.2.0</version>
-                <executions>
-                    <execution>
-                        <id>jmeter-tests</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>jmeter</goal>
-                        </goals>
-                        <configuration>
-                            <skipTests>${skipTests}</skipTests>
-                            <ignoreResultFailures>true</ignoreResultFailures>
-                            <suppressJMeterOutput>false</suppressJMeterOutput>
-                            <propertiesUser>
-                                <testData>testdata.csv</testData>
-                                <threadNum>10</threadNum>
-                                <rampUpPeriodSecs>2</rampUpPeriodSecs>
-                                <loopCount>10</loopCount>
-                            </propertiesUser>
-                        </configuration>
-                    </execution>
-                </executions>
-                <configuration>
-                    <testFilesDirectory>target/test/performance</testFilesDirectory>
-                    <testResultsTimestamp>false</testResultsTimestamp>
-                    <resultsDirectory>${project.root.dir}/results/performance</resultsDirectory>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>com.lazerycode.jmeter</groupId>
-                <artifactId>jmeter-analysis-maven-plugin</artifactId>
-                <version>1.0.6</version>
-                <executions>
-                    <execution>
-                        <id>jmeter-analysis</id>
+				<groupId>com.lazerycode.jmeter</groupId>
+				<artifactId>jmeter-maven-plugin</artifactId>
+				<version>2.2.0</version>
+				<executions>
+					<execution>
+						<id>jmeter-tests</id>
 						<phase>install</phase>
-                        <goals>
-                            <goal>analyze</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <sourceDirFailed>false</sourceDirFailed>
-                    <source>${project.root.dir}/results/performance/*</source>
-					<targetDirectory>${project.root.dir}/results/performance/reports</targetDirectory>
-                </configuration>
-            </plugin>
-        	-->
+						<goals>
+							<goal>jmeter</goal>
+						</goals>
+						<configuration>
+							<skipTests>${skipTests}</skipTests>
+							<ignoreResultFailures>true</ignoreResultFailures>
+							<suppressJMeterOutput>false</suppressJMeterOutput>
+							<propertiesUser>
+								<testData>testdata.csv</testData>
+								<threadNum>10</threadNum>
+								<rampUpPeriodSecs>2</rampUpPeriodSecs>
+								<loopCount>10</loopCount>
+							</propertiesUser>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<testFilesDirectory>target/test/performance</testFilesDirectory>
+					<testResultsTimestamp>false</testResultsTimestamp>
+					<resultsDirectory>${project.root.dir}/results/performance</resultsDirectory>
+				</configuration>
+			</plugin>
 
-            <!-- cleaning dirs -->
+			<plugin>
+				<groupId>com.lazerycode.jmeter</groupId>
+				<artifactId>jmeter-analysis-maven-plugin</artifactId>
+				<version>1.0.6</version>
+				<executions>
+					<execution>
+						<id>jmeter-analysis</id>
+						<phase>install</phase>
+						<goals>
+							<goal>analyze</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<sourceDirFailed>false</sourceDirFailed>
+					<source>${project.root.dir}/results/performance/*</source>
+					<targetDirectory>${project.root.dir}/results/performance/reports</targetDirectory>
+				</configuration>
+			</plugin>
+			-->
+
+			<!-- cleaning dirs -->
 			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>2.5</version>
@@ -416,6 +415,7 @@
 						</goals>
 					</execution>
 					<!-- leave the target dir for debugging, post mortem -->
+					<!-- 
 					<execution>
 						<id>auto-clean-install</id>
 						<phase>install</phase>
@@ -423,7 +423,7 @@
 							<goal>clean</goal>
 						</goals>
 					</execution>
-					<!-- -->
+					-->
 				</executions>
 			</plugin>
 		</plugins>
