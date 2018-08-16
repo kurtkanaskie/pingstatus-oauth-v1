@@ -5,11 +5,7 @@
         "entry": [
             {
                 "name": "target.basepath",
-                "value": "kurtkanaskietraining/crm"
-            },
-            {
-                "name": "target.pathsuffix",
-                "value": "status"
+                "value": "pingstatusmock/v1"
             }
         ]
     }

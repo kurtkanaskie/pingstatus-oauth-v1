@@ -202,7 +202,7 @@ NOTE: For some reason the latest cucumber (2.3.4) doesnt work with apickli-gherk
         </profile>
 ```
 
-### Frequently used commands
+## Other commands
 * mvn jshint:lint
 * mvn -Ptest exec:exec@unit
 * mvn -Ptest install -Ddeployment.suffix=
@@ -216,22 +216,29 @@ NOTE: For some reason the latest cucumber (2.3.4) doesnt work with apickli-gherk
 * mvn -Ptest install -Ddeployment.suffix= -Dapi.testtag=@get-ping -DskipPerformanceTests=true
 * mvn -Ptest clean process-resources -Ddeployment.suffix= exec:exec@integration -Dapi.testtag=@get-ping
 
-* mvn -Ptest apigee-config:targetservers -Dapigee.config.options=update
-* mvn -Ptest apigee-config:developerapps -Dapigee.config.options=update
-* mvn -Ptest apigee-config:apiproducts -Dapigee.config.options=update
-* mvn -Ptest apigee-config:kvms -Dapigee.config.options=update
+### Standalone configuration changes
 
-Install proxy no integration or jmeter tests
-* mvn -Ptest install -Ddeployment.suffix= -Dapi.testtag=@NONE -DskipPerformanceTests=true
+## For non "replaced" items
+This is for items that do not get process via the replacer plugin
 
-Install proxy and update all configs, no integration or jmeter tests
-* mvn -Ptest install -Ddeployment.suffix= -Dapigee.config.options=update -Dapi.testtag=@NONE -DskipPerformanceTests=true
+NOTE: the use of config.dir
 
-Export App keys
+* mvn -Ptraining-prod apigee-config:targetservers -Dapigee.config.options=update -Dapigee.config.dir=resources/edge
+* mvn -Ptraining-prod apigee-config:kvms -Dapigee.config.options=update -Dapigee.config.dir=resources/edge
+
+## For "replaced" items
+This is for items that do not get process via the replacer plugin
+
+NOTE: the use of config.dir
+
+* mvn -Ptraining-test apigee-config:developerapps -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge
+* mvn -Ptraining-test apigee-config:apiproducts -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge
+
+## Export App keys
 * mvn -Ptraining-test process-resources -Ddeployment.suffix= -Dapi.testtag=@health apigee-config:exportAppKeys -Dapigee.config.exportDir=target/test/integration exec:exec@integration -Dapi.testtag=@get-ping
-* mvn -Ptraining-test install -Ddeployment.suffix= -DskipPerformanceTests=true -Dapigee.config.exportDir=target/test/integration
 
 ## To run the tests once deployed
+
 ### Via Maven
 * mvn -Ptraining-test process-resources -Ddeployment.suffix= -Dapi.testtag=@health apigee-config:exportAppKeys -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration exec:exec@integration -Dapi.testtag=@get-ping
 

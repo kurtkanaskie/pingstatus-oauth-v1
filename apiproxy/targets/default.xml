@@ -37,6 +37,10 @@
         <LoadBalancer>
             <Server name="pingstatus-baas-v1"/>
         </LoadBalancer>
+        <!-- Using this here allows us to create the TargetServer in the UI, otherwise need to use Management API -->
+        <SSLInfo>
+            <Enabled>true</Enabled>
+        </SSLInfo>
         <Path>{flow.target.basepath}/{flow.target.pathsuffix}</Path>
     </HTTPTargetConnection>
 </TargetEndpoint>
