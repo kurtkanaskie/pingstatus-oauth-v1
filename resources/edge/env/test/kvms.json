@@ -1,0 +1,16 @@
+[
+    {
+        "name": "pingstatus-baas-v1",
+        "encrypted": false,
+        "entry": [
+            {
+                "name": "target.basepath",
+                "value": "pingstatusmock/v1"
+            },
+            {
+                "name": "target.pathsuffix",
+                "value": "status"
+            }
+        ]
+    }
+]

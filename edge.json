@@ -1,3 +1,4 @@
+// A simple approach to managing config items, however, doesn't work across multiple orgs, therefore use resources folder approach
 {
     "version": "1.0",
     "apiConfig": {

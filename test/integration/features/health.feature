@@ -16,7 +16,7 @@ Feature: API proxy health
         And response body path $.latency should be ^\d{1,2}
         And response body path $.message should be PONG
 
-    @get-status
+    @get-status-client-credentials
     Scenario: Verify the API proxy is responding
         Given I have a valid client_credentials access token
         When I GET /status
@@ -28,7 +28,7 @@ Feature: API proxy health
         And response body path $.latency should be ^\d{1,2}
         And response body path $.message should be STATUS
 
-	@get-status
+	@get-status-password
     Scenario: Verify the backend service is responding
         Given I have a valid password access token
 		When I GET /status

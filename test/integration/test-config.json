@@ -1,13 +1,13 @@
 {
     "apiconfig": {
-        "domain": "kurtkanaskietrainer-trial-test.apigee.net",
+        "domain": "API_NORTHBOUND_DOMAIN",
         "basepath": "/pingstatus-baas/v1",
         "apiproxy": "pingstatus-baas-v1",
-		"oauthDomain": "kurtkanaskietrainer-trial-test.apigee.net",
-        "oauthBasepath": "/oauth-baas/v1",
-        "userUsername" : "REPLACE-USERNAME",
-        "userPassword" : "REPLACE-PASSWORD",
-        "product":"pingstatus-baas-v1-product-test",
-        "app":"pingstatus-baas-v1-app-test"
+		"oauthDomain": "OAUTH_DOMAIN",
+        "oauthBasepath": "OAUTH_BASEPATH",
+        "userUsername" : "REPLACE_USERNAME",
+        "userPassword" : "REPLACE_PASSWORD",
+        "product":"pingstatus-baas-v1-product-APIGEE_ENVIRONMENT",
+        "app":"pingstatus-baas-v1-app-APIGEE_ENVIRONMENT"
     }
 }

@@ -45,14 +45,16 @@
 				<apigee.env>test</apigee.env>
 				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
 				<apigee.apiversion>v1</apigee.apiversion>
-				<apigee.org>${env.APIGEE_ORG}</apigee.org>
+				<apigee.org>kurtkanaskietrainer-trial</apigee.org>
 				<apigee.username>${env.APIGEE_USERNAME}</apigee.username>
 				<apigee.password>${env.APIGEE_PASSWORD}</apigee.password>
 				<apigee.authtype>oauth</apigee.authtype>
-				<api.northbound.domain>${env.API_DOMAIN_TEST}</api.northbound.domain>
+				<api.northbound.domain>kurtkanaskietrainer-trial-test.apigee.net</api.northbound.domain>
+				<oauth.domain>kurtkanaskietrainer-trial-test.apigee.net</oauth.domain>
+				<oauth.basepath>/oauth-baas/v1</oauth.basepath>
+				<user.username>demouser</user.username>
+				<user.password>demouser1</user.password>
 				<api.testtag>~@intg,~@health,~@wip,~@mock</api.testtag>
-				<userUsername>demouser</userUsername>
-				<userPassword>demouser1</userPassword>
 			</properties>
 		</profile>
 		<profile>
@@ -62,14 +64,16 @@
 				<apigee.env>prod</apigee.env>
 				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
 				<apigee.apiversion>v1</apigee.apiversion>
-				<apigee.org>${env.APIGEE_ORG}</apigee.org>
+				<apigee.org>kurtkanaskietrainer-trial</apigee.org>
 				<apigee.username>${env.APIGEE_USERNAME}</apigee.username>
 				<apigee.password>${env.APIGEE_PASSWORD}</apigee.password>
 				<apigee.authtype>oauth</apigee.authtype>
-				<api.northbound.domain>${env.API_DOMAIN_PROD}</api.northbound.domain>
+				<api.northbound.domain>kurtkanaskietrainer-trial-prod.apigee.net</api.northbound.domain>
+				<oauth.domain>kurtkanaskietrainer-trial-prod.apigee.net</oauth.domain>
+				<oauth.basepath>/oauth-baas/v1</oauth.basepath>
+				<user.username>demouser</user.username>
+				<user.password>demouser1</user.password>
 				<api.testtag>~@health</api.testtag>
-				<userUsername>demouser</userUsername>
-				<userPassword>demouser1</userPassword>
 			</properties>
 		</profile>
 	</profiles>
@@ -129,6 +133,7 @@
 									<directory>${project.root.dir}</directory>
 									<filtering>true</filtering>
 									<includes>
+										<include>resources/**</include>
 										<include>apiproxy/**</include>
 										<include>test/integration/**</include>
 										<include>test/performance/**</include>
@@ -158,10 +163,12 @@
 				<configuration>
 					<basedir>${target.root.dir}</basedir>
 					<includes>
+						<include>apiproxy/pingstatus-baas-v1.xml</include>
 						<include>apiproxy/proxies/default.xml</include>
 						<include>test/integration/test-config.json</include>
-						<include>apiproxy/pingstatus-baas-v1.xml</include>
-						<include>test/performance/testdata.csv</include>
+						<include>resources/edge/org/apiProducts.json</include>
+						<include>resources/edge/org/developerApps.json</include>
+						<!--<include>test/performance/testdata.csv</include>-->
 					</includes>
 					<replacements>
 						<replacement>
@@ -173,28 +180,32 @@
 							<value>pingstatus-baas-${deployment.suffix}v1</value>
 						</replacement>
 						<replacement>
-							<token>kurtkanaskietrainer-trial-test.apigee.net</token>
+							<token>API_NORTHBOUND_DOMAIN</token>
 							<value>${api.northbound.domain}</value>
+						</replacement>
+						<replacement>
+							<token>OAUTH_DOMAIN</token>
+							<value>${oauth.domain}</value>
+						</replacement>
+						<replacement>
+							<token>OAUTH_BASEPATH</token>
+							<value>${oauth.basepath}</value>
 						</replacement>
 						<replacement>
 							<token>@description</token>
 							<value>commit ${commit} from ${branch} branch by ${user.name}</value>
 						</replacement>
 						<replacement>
-							<token>REPLACE-USERNAME</token>
-							<value>${userUsername}</value>
+							<token>REPLACE_USERNAME</token>
+							<value>${user.username}</value>
 						</replacement>
 						<replacement>
-							<token>REPLACE-PASSWORD</token>
-							<value>${userPassword}</value>
+							<token>REPLACE_PASSWORD</token>
+							<value>${user.password}</value>
 						</replacement>
 						<replacement>
-							<token>pingstatus-baas-v1-product-test</token>
-							<value>pingstatus-baas-v1-product-${apigee.env}</value>
-						</replacement>
-						<replacement>
-							<token>pingstatus-baas-v1-app-test</token>
-							<value>pingstatus-baas-v1-app-${apigee.env}</value>
+							<token>APIGEE_ENVIRONMENT</token>
+							<value>${apigee.env}</value>
 						</replacement>
 					</replacements>
 				</configuration>

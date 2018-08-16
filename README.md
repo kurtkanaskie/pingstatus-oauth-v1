@@ -228,6 +228,19 @@ Install proxy and update all configs, no integration or jmeter tests
 * mvn -Ptest install -Ddeployment.suffix= -Dapigee.config.options=update -Dapi.testtag=@NONE -DskipPerformanceTests=true
 
 Export App keys
-* mvn -Ptest apigee-config:exportAppKeys -Dapigee.config.exportDir=./appkeys
 * mvn -Ptraining-test process-resources -Ddeployment.suffix= -Dapi.testtag=@health apigee-config:exportAppKeys -Dapigee.config.exportDir=target/test/integration exec:exec@integration -Dapi.testtag=@get-ping
 * mvn -Ptraining-test install -Ddeployment.suffix= -DskipPerformanceTests=true -Dapigee.config.exportDir=target/test/integration
+
+## To run the tests once deployed
+### Via Maven
+* mvn -Ptraining-test process-resources -Ddeployment.suffix= -Dapi.testtag=@health apigee-config:exportAppKeys -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration exec:exec@integration -Dapi.testtag=@get-ping
+
+### Via cucumber/apickli
+* node ./node_modules/cucumber/bin/cucumber.js target/test/integration/features --tags @health
+
+
+## Bottom line
+
+### All at once using resources dir, run health tests
+* mvn -Ptraining-test install -Ddeployment.suffix= -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dapi.testtag=@health
+
