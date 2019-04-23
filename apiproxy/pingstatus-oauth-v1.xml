@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="2" name="pingstatus-baas-v1">
-    <Basepaths>/pingstatus-baas/v1</Basepaths>
+<APIProxy revision="2" name="pingstatus-oauth-v1">
+    <Basepaths>/pingstatus-oauth/v1</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1512572651484</CreatedAt>
     <CreatedBy>kurtkanaskie@google.com</CreatedBy>
     <!-- @description gets replaced with SCM details, see pom.xml -->
-    <Description>Proxy to test OAuth access to BaaS backend. @description</Description>
-    <DisplayName>pingstatus-baas-v1</DisplayName>
+    <Description>Proxy to test OAuth access to mock backend. @description</Description>
+    <DisplayName>pingstatus-oauth-v1</DisplayName>
     <LastModifiedAt>1512648078786</LastModifiedAt>
     <LastModifiedBy>kurtkanaskie@google.com</LastModifiedBy>
     <Policies>

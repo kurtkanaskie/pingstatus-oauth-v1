@@ -35,7 +35,7 @@
     </Flows>
     <HTTPTargetConnection>
         <LoadBalancer>
-            <Server name="pingstatus-baas-v1"/>
+            <Server name="pingstatus-oauth-v1"/>
         </LoadBalancer>
         <!-- Using this here allows us to create the TargetServer in the UI, otherwise need to use Management API -->
         <SSLInfo>

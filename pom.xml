@@ -3,9 +3,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>apigee</groupId>
-	<artifactId>pingstatus-baas-v1</artifactId>
+	<artifactId>pingstatus-oauth-v1</artifactId>
 	<version>-</version>
-	<name>pingstatus-baas-${deployment.suffix}v1</name>
+	<name>pingstatus-oauth-${deployment.suffix}v1</name>
 	<packaging>pom</packaging>
 
 	<pluginRepositories>
@@ -39,6 +39,80 @@
 	-->
 	<profiles>
 		<profile>
+			<id>test</id>
+			<!-- Uses properties from $HOME/.m2/settings.xml or environment variables via set-edge-env-values used in Jenkins -->
+			<!-- Jenkins command:
+				install -P${EdgeProfile} -Ddeployment.suffix=${EdgeDeploySuffix} -Dapigee.org=${EdgeOrg} -Dapigee.env=${EdgeEnv} -Dapi.northbound.domain=${EdgeNorthboundDomain} -Dapigee.username=${EdgeInstallUsername} -Dapigee.password=${EdgeInstallPassword} -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dcommit=${GIT_COMMIT} -Dbranch=${GIT_BRANCH}
+			-->
+			<properties>
+				<apigee.profile>test</apigee.profile>
+				<apigee.env>${EdgeEnv}</apigee.env>
+				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+				<apigee.apiversion>v1</apigee.apiversion>
+				<apigee.org>${EdgeOrg}</apigee.org>
+				<apigee.username>${EdgeUsername}</apigee.username>
+				<apigee.password>${EdgePassword}</apigee.password>
+				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
+				<api.testtag>@errorHandling,@health,@wip,@mock</api.testtag>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<!-- Uses properties from $HOME/.m2/settings.xml or environment variables via set-edge-env-values used in Jenkins -->
+			<!-- Jenkins command:
+				install -P${EdgeProfile} -Ddeployment.suffix=${EdgeDeploySuffix} -Dapigee.org=${EdgeOrg} -Dapigee.env=${EdgeEnv} -Dapi.northbound.domain=${EdgeNorthboundDomain} -Dapigee.username=${EdgeInstallUsername} -Dapigee.password=${EdgeInstallPassword} -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dcommit=${GIT_COMMIT} -Dbranch=${GIT_BRANCH}
+			-->
+			<properties>
+				<apigee.profile>prod</apigee.profile>
+				<apigee.env>${EdgeEnv}</apigee.env>
+				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+				<apigee.apiversion>v1</apigee.apiversion>
+				<apigee.org>${EdgeOrg}</apigee.org>
+				<apigee.username>${EdgeUsername}</apigee.username>
+				<apigee.password>${EdgePassword}</apigee.password>
+				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
+				<api.testtag>@health</api.testtag>
+			</properties>
+		</profile>
+		<profile>
+			<id>amer-demo13-test</id>
+			<!-- Uses properties from $HOME/.m2/settings.xml or environment variables via set-edge-env-values used in Jenkins -->
+			<properties>
+				<apigee.profile>test</apigee.profile>
+				<apigee.env>${EdgeEnv}</apigee.env>
+				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+				<apigee.apiversion>v1</apigee.apiversion>
+				<apigee.org>${EdgeOrg}</apigee.org>
+				<apigee.username>${EdgeUsername}</apigee.username>
+				<apigee.password>${EdgePassword}</apigee.password>
+				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
+				<oauth.domain>${EdgeNorthboundDomain}</oauth.domain>
+				<oauth.basepath>/oauth-mock/v1</oauth.basepath>
+				<user.username>demouser</user.username>
+				<user.password>demouser1</user.password>
+				<api.testtag>@errorHandling,@health,@wip,@mock</api.testtag>
+			</properties>
+		</profile>
+		<profile>
+			<id>amer-demo13-prod</id>
+			<!-- Uses properties from $HOME/.m2/settings.xml or environment variables via set-edge-env-values used in Jenkins -->
+			<properties>
+				<apigee.profile>test</apigee.profile>
+				<apigee.env>${EdgeEnv}</apigee.env>
+				<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+				<apigee.apiversion>v1</apigee.apiversion>
+				<apigee.org>${EdgeOrg}</apigee.org>
+				<apigee.username>${EdgeUsername}</apigee.username>
+				<apigee.password>${EdgePassword}</apigee.password>
+				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
+				<oauth.domain>${EdgeNorthboundDomain}</oauth.domain>
+				<oauth.basepath>/oauth-mock/v1</oauth.basepath>
+				<user.username>demouser</user.username>
+				<user.password>demouser1</user.password>
+				<api.testtag>@errorHandling,@health,@wip,@mock</api.testtag>
+			</properties>
+		</profile>
+		<profile>
 			<id>training-test</id>
 			<properties>
 				<apigee.profile>training-test</apigee.profile>
@@ -51,7 +125,7 @@
 				<apigee.authtype>oauth</apigee.authtype>
 				<api.northbound.domain>kurtkanaskietrainer-trial-test.apigee.net</api.northbound.domain>
 				<oauth.domain>kurtkanaskietrainer-trial-test.apigee.net</oauth.domain>
-				<oauth.basepath>/oauth-baas/v1</oauth.basepath>
+				<oauth.basepath>/oauth-mock/v1</oauth.basepath>
 				<user.username>demouser</user.username>
 				<user.password>demouser1</user.password>
 				<api.testtag>~@intg,~@health,~@wip,~@mock</api.testtag>
@@ -70,7 +144,7 @@
 				<apigee.authtype>oauth</apigee.authtype>
 				<api.northbound.domain>kurtkanaskietrainer-trial-prod.apigee.net</api.northbound.domain>
 				<oauth.domain>kurtkanaskietrainer-trial-prod.apigee.net</oauth.domain>
-				<oauth.basepath>/oauth-baas/v1</oauth.basepath>
+				<oauth.basepath>/oauth-oauth/v1</oauth.basepath>
 				<user.username>demouser</user.username>
 				<user.password>demouser1</user.password>
 				<api.testtag>~@health</api.testtag>
@@ -163,7 +237,7 @@
 				<configuration>
 					<basedir>${target.root.dir}</basedir>
 					<includes>
-						<include>apiproxy/pingstatus-baas-v1.xml</include>
+						<include>apiproxy/pingstatus-oauth-v1.xml</include>
 						<include>apiproxy/proxies/default.xml</include>
 						<include>test/integration/test-config.json</include>
 						<include>resources/edge/org/apiProducts.json</include>
@@ -172,12 +246,12 @@
 					</includes>
 					<replacements>
 						<replacement>
-							<token>/pingstatus-baas/v1</token>
-							<value>/pingstatus-baas/${deployment.suffix}v1</value>
+							<token>/pingstatus-oauth/v1</token>
+							<value>/pingstatus-oauth/${deployment.suffix}v1</value>
 						</replacement>
 						<replacement>
-							<token>pingstatus-baas-v1</token>
-							<value>pingstatus-baas-${deployment.suffix}v1</value>
+							<token>pingstatus-oauth-v1</token>
+							<value>pingstatus-oauth-${deployment.suffix}v1</value>
 						</replacement>
 						<replacement>
 							<token>API_NORTHBOUND_DOMAIN</token>

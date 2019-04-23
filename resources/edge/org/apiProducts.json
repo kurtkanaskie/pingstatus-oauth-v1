@@ -1,6 +1,6 @@
 [
     {
-        "name": "pingstatus-baas-v1-product-APIGEE_ENVIRONMENT",
+        "name": "pingstatus-oauth-v1-product-APIGEE_ENVIRONMENT",
         "apiResources": [
             "/",
             "/**"
@@ -9,17 +9,17 @@
         "attributes": [
             {
                 "name": "custom.description",
-                "value": "Product to test pingstatus-baas-v1 API for APIGEE_ENVIRONMENT env with attributes"
+                "value": "Product to test pingstatus-oauth-v1 API for APIGEE_ENVIRONMENT env with attributes"
             }
         ],
-        "description": "Product to test pingstatus-baas-v1 API in APIGEE_ENVIRONMENT env",
-        "displayName": "pingstatus-baas-v1-product-APIGEE_ENVIRONMENT",
+        "description": "Product to test pingstatus-oauth-v1 API in APIGEE_ENVIRONMENT env",
+        "displayName": "pingstatus-oauth-v1-product-APIGEE_ENVIRONMENT",
         "environments": [
             "APIGEE_ENVIRONMENT"
         ],
         "proxies": [
-            "pingstatus-baas-v1",
-            "oauth-baas-v1"
+            "pingstatus-oauth-v1",
+            "oauth-mock-v1"
         ],
         "quota": "10000",
         "quotaInterval": "1",

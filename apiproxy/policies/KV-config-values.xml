@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KV-config-values" mapIdentifier="pingstatus-baas-v1">
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KV-config-values" mapIdentifier="pingstatus-oauth-v1">
     <DisplayName>KV-config-values</DisplayName>
     <Properties/>
     <ExpiryTimeInSecs>60</ExpiryTimeInSecs>

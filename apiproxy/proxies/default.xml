@@ -74,7 +74,7 @@
         </Flow>
     </Flows>
     <HTTPProxyConnection>
-        <BasePath>/pingstatus-baas/v1</BasePath>
+        <BasePath>/pingstatus-oauth/v1</BasePath>
         <Properties/>
         <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>

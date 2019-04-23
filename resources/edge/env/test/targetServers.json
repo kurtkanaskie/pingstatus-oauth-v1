@@ -1,6 +1,6 @@
 [
     {
-        "name": "pingstatus-baas-v1",
+        "name": "pingstatus-oauth-v1",
         "host": "kurtkanaskietrainer-trial-test.apigee.net",
         "isEnabled": true,
         "port": 443,
