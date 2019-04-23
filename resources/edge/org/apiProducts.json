@@ -19,7 +19,7 @@
         ],
         "proxies": [
             "pingstatus-oauth-v1",
-            "oauth-mock-v1"
+            "oauth-v1"
         ],
         "quota": "10000",
         "quotaInterval": "1",

@@ -87,7 +87,7 @@
 				<apigee.password>${EdgePassword}</apigee.password>
 				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
 				<oauth.domain>${EdgeNorthboundDomain}</oauth.domain>
-				<oauth.basepath>/oauth-mock/v1</oauth.basepath>
+				<oauth.basepath>/oauth/v1</oauth.basepath>
 				<user.username>demouser</user.username>
 				<user.password>demouser1</user.password>
 				<api.testtag>@errorHandling,@health,@wip,@mock</api.testtag>
@@ -106,7 +106,7 @@
 				<apigee.password>${EdgePassword}</apigee.password>
 				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
 				<oauth.domain>${EdgeNorthboundDomain}</oauth.domain>
-				<oauth.basepath>/oauth-mock/v1</oauth.basepath>
+				<oauth.basepath>/oauth/v1</oauth.basepath>
 				<user.username>demouser</user.username>
 				<user.password>demouser1</user.password>
 				<api.testtag>@errorHandling,@health,@wip,@mock</api.testtag>
@@ -125,7 +125,7 @@
 				<apigee.authtype>oauth</apigee.authtype>
 				<api.northbound.domain>kurtkanaskietrainer-trial-test.apigee.net</api.northbound.domain>
 				<oauth.domain>kurtkanaskietrainer-trial-test.apigee.net</oauth.domain>
-				<oauth.basepath>/oauth-mock/v1</oauth.basepath>
+				<oauth.basepath>/oauth/v1</oauth.basepath>
 				<user.username>demouser</user.username>
 				<user.password>demouser1</user.password>
 				<api.testtag>~@intg,~@health,~@wip,~@mock</api.testtag>
@@ -144,7 +144,7 @@
 				<apigee.authtype>oauth</apigee.authtype>
 				<api.northbound.domain>kurtkanaskietrainer-trial-prod.apigee.net</api.northbound.domain>
 				<oauth.domain>kurtkanaskietrainer-trial-prod.apigee.net</oauth.domain>
-				<oauth.basepath>/oauth-oauth/v1</oauth.basepath>
+				<oauth.basepath>/oauth/v1</oauth.basepath>
 				<user.username>demouser</user.username>
 				<user.password>demouser1</user.password>
 				<api.testtag>~@health</api.testtag>
@@ -240,6 +240,7 @@
 						<include>apiproxy/pingstatus-oauth-v1.xml</include>
 						<include>apiproxy/proxies/default.xml</include>
 						<include>test/integration/test-config.json</include>
+						<include>resources/edge/env/*/targetServers.json</include>
 						<include>resources/edge/org/apiProducts.json</include>
 						<include>resources/edge/org/developerApps.json</include>
 						<!--<include>test/performance/testdata.csv</include>-->
@@ -490,7 +491,9 @@
 			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>2.5</version>
-
+				<configuration>
+					<skip>${skip.clean}</skip>
+				</configuration>
 				<executions>
 					<execution>
 						<id>auto-clean-init</id>
