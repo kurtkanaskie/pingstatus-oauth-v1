@@ -53,6 +53,10 @@
 				<apigee.username>${EdgeUsername}</apigee.username>
 				<apigee.password>${EdgePassword}</apigee.password>
 				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
+				<oauth.domain>${EdgeNorthboundDomain}</oauth.domain>
+				<oauth.basepath>/oauth/v1</oauth.basepath>
+				<user.username>demouser</user.username>
+				<user.password>demouser1</user.password>
 				<api.testtag>@errorHandling,@health,@wip,@mock</api.testtag>
 			</properties>
 		</profile>
@@ -71,6 +75,10 @@
 				<apigee.username>${EdgeUsername}</apigee.username>
 				<apigee.password>${EdgePassword}</apigee.password>
 				<api.northbound.domain>${EdgeNorthboundDomain}</api.northbound.domain>
+				<oauth.domain>${EdgeNorthboundDomain}</oauth.domain>
+				<oauth.basepath>/oauth/v1</oauth.basepath>
+				<user.username>demouser</user.username>
+				<user.password>demouser1</user.password>
 				<api.testtag>@health</api.testtag>
 			</properties>
 		</profile>
