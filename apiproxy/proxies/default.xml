@@ -70,7 +70,7 @@
                 </Step>
             </Request>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/**")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "**")</Condition>
         </Flow>
     </Flows>
     <HTTPProxyConnection>
