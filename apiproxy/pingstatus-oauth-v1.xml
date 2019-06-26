@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="2" name="pingstatus-oauth-v1">
+<APIProxy revision="11" name="pingstatus-oauth-v1">
     <Basepaths>/pingstatus-oauth/v1</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1512572651484</CreatedAt>
-    <CreatedBy>kurtkanaskie@google.com</CreatedBy>
-    <!-- @description gets replaced with SCM details, see pom.xml -->
-    <Description>Proxy to test OAuth access to mock backend. @description</Description>
+    <CreatedAt>1561549179223</CreatedAt>
+    <CreatedBy>defaultUser</CreatedBy>
+    <Description>Proxy to test OAuth access using any OAuth proxy, added FC-CORS. @description</Description>
     <DisplayName>pingstatus-oauth-v1</DisplayName>
-    <LastModifiedAt>1512648078786</LastModifiedAt>
-    <LastModifiedBy>kurtkanaskie@google.com</LastModifiedBy>
+    <LastModifiedAt>1561549179223</LastModifiedAt>
+    <LastModifiedBy>defaultUser</LastModifiedBy>
+    <ManifestVersion>SHA-512:8fa423013140174d4b5f76dfbdc6b029192a2dcf5720b77fe8555d3faab8bb18a79635ba80177fbedcdb34651a1b97f18ba0befa72fb78e042457b55b7f7cfd8</ManifestVersion>
     <Policies>
+        <Policy>AM-AddCORS</Policy>
         <Policy>AM-create-ping-response</Policy>
         <Policy>AM-create-status-response</Policy>
-        <Policy>AM-debug</Policy>
         <Policy>AM-set-get-status-pathsuffix</Policy>
         <Policy>AM-set-proxy-default-error-vars</Policy>
         <Policy>AM-set-service-unavailable-error-variables</Policy>
@@ -23,7 +23,6 @@
         <Policy>KV-config-values</Policy>
         <Policy>OA-verify-access-token</Policy>
         <Policy>RF-path-suffix-not-found</Policy>
-        <Policy>VA-header</Policy>
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>
@@ -38,5 +37,4 @@
     <TargetEndpoints>
         <TargetEndpoint>default</TargetEndpoint>
     </TargetEndpoints>
-    <validate>false</validate>
 </APIProxy>
