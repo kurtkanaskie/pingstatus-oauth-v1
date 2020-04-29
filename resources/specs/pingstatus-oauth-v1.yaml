@@ -1,10 +1,11 @@
 openapi: 3.0.0
 info:
   version: 1.0.0
-  title: pingstatus-v1
+  title: pingstatus-oauth-v1
   description: |
     Healthchecks for proxy and target backend. 
-    * Client Credentials: EMwIKv4pp7UWkDcMnf6IAxTOxKN9WAJ8 4t6iPuzExcLQRzOe
+    * Client Credentials: r7UpHEC5vhdcgTfpYTrA7veHAOR5z2an XjJOrA45hZS4yWpe
+    * Person Credentials: demouser demouser1
   contact:
     email: kurtkanaskie@google.com
 servers:
@@ -59,13 +60,21 @@ paths:
                 $ref: "#/components/schemas/ErrorResponse"
 security:
   - ClientCredentials: []
+  - Password: []
 components:
   securitySchemes:
     ClientCredentials:
       type: oauth2
-      description: See http://http://dev-amer-demo13.pantheonsite.io/get-started
+      description: See https://developer.kurtkanaskie.net/docs/get-started-client_credentials
       flows: 
         clientCredentials: 
+          tokenUrl: https://amer-demo13-test.apigee.net/oauth/v1/token
+          scopes: {}
+    Password:
+      type: oauth2
+      description: See https://developer.kurtkanaskie.net/docs/get-started-password
+      flows: 
+        password:
           tokenUrl: https://amer-demo13-test.apigee.net/oauth/v1/token
           scopes: {}
   schemas:
