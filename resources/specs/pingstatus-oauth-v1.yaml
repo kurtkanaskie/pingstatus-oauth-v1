@@ -6,6 +6,7 @@ info:
     Healthchecks for proxy and target backend. 
     * Client Credentials: r7UpHEC5vhdcgTfpYTrA7veHAOR5z2an XjJOrA45hZS4yWpe
     * Person Credentials: demouser demouser1
+    * Person Credentials Authorization Code: per IdP
   contact:
     email: kurtkanaskie@google.com
 servers:
@@ -61,6 +62,7 @@ paths:
 security:
   - ClientCredentials: []
   - Password: []
+  - AuthorizationCode: []
 components:
   securitySchemes:
     ClientCredentials:
@@ -68,14 +70,22 @@ components:
       description: See https://developer.kurtkanaskie.net/docs/get-started-client_credentials
       flows: 
         clientCredentials: 
-          tokenUrl: https://amer-demo13-test.apigee.net/oauth/v1/token
+          tokenUrl: https://api-test.kurtkanaskie.net/oauth/v1/token
           scopes: {}
     Password:
       type: oauth2
       description: See https://developer.kurtkanaskie.net/docs/get-started-password
       flows: 
         password:
-          tokenUrl: https://amer-demo13-test.apigee.net/oauth/v1/token
+          tokenUrl: https://api-test.kurtkanaskie.net/oauth/v1/token
+          scopes: {}
+    AuthorizationCode:
+      type: oauth2
+      description: See https://developer.kurtkanaskie.net/docs/get-started-password
+      flows: 
+        authorizationCode:
+          tokenUrl: https://api-test.kurtkanaskie.net/okta-trial/v1/oauth/token
+          authorizationUrl: https://api-test.kurtkanaskie.net/okta-trial/v1/oauth/authorize
           scopes: {}
   schemas:
     ErrorResponse:

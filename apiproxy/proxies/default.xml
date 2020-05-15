@@ -91,6 +91,7 @@
     <HTTPProxyConnection>
         <BasePath>/pingstatus-oauth/v1</BasePath>
         <Properties/>
+        <VirtualHost>secure-one-way</VirtualHost>
         <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>
     <RouteRule name="CORS">
