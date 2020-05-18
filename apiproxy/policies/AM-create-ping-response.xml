@@ -7,7 +7,7 @@
     "environment": "{environment.name}",
     "apiproxy": "{apiproxy.name}",
     "client": "{client.host}",
-    "clientCN":"{client.cn}",
+    "app":"{app.name}",
     "time": "{system.time}",
     "latency": "{total_request_time}",
     "message":"PONG"

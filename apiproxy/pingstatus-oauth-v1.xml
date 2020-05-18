@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="11" name="pingstatus-oauth-v1">
+<APIProxy revision="15" name="pingstatus-oauth-v1">
     <Basepaths>/pingstatus-oauth/v1</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1561549179223</CreatedAt>
-    <CreatedBy>defaultUser</CreatedBy>
-    <Description>Proxy to test OAuth access using any OAuth proxy, added FC-CORS. @description</Description>
+    <CreatedAt>1556038936062</CreatedAt>
+    <CreatedBy>kurtkanaskie+jenkins@google.com</CreatedBy>
+    <Description>Proxy to test OAuth access using any OAuth proxy, added FC-CORS. commit  from a local branch by kurtkanaskie</Description>
     <DisplayName>pingstatus-oauth-v1</DisplayName>
-    <LastModifiedAt>1561549179223</LastModifiedAt>
+    <LastModifiedAt>1589827248953</LastModifiedAt>
     <LastModifiedBy>defaultUser</LastModifiedBy>
-    <ManifestVersion>SHA-512:8fa423013140174d4b5f76dfbdc6b029192a2dcf5720b77fe8555d3faab8bb18a79635ba80177fbedcdb34651a1b97f18ba0befa72fb78e042457b55b7f7cfd8</ManifestVersion>
+    <ManifestVersion>SHA-512:97fa1b4ce2db16cac16e8f5f3344cb97de4fece02034f32d54a11c7b8d202853820b33dcb41778639c2d2191b98bc9366fdcb551da82c642086c99fdf96fd95d</ManifestVersion>
     <Policies>
         <Policy>AM-AddCORS</Policy>
+        <Policy>AM-Debug</Policy>
         <Policy>AM-create-ping-response</Policy>
         <Policy>AM-create-status-response</Policy>
         <Policy>AM-set-get-status-pathsuffix</Policy>

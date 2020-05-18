@@ -3,8 +3,9 @@ info:
   version: 1.0.0
   title: pingstatus-oauth-v1
   description: |
-    Healthchecks for proxy and target backend. 
-    * Client Credentials: r7UpHEC5vhdcgTfpYTrA7veHAOR5z2an XjJOrA45hZS4yWpe
+    Health checks for proxy and target backend.
+    * Client Credentials Integrated: TUZybEe4SrLfYB6RivZJ2yVzY6CBS7LW SfLdAODuAtrlPsZt
+    * Client Credentials Drupal 8:   Xq7RATcIDaUkhxGNEQOxpdugZcPa8m6R xz87RzBohOGSGlkA
     * Person Credentials: demouser demouser1
     * Person Credentials Authorization Code: per IdP
   contact:
@@ -81,11 +82,11 @@ components:
           scopes: {}
     AuthorizationCode:
       type: oauth2
-      description: See https://developer.kurtkanaskie.net/docs/get-started-password
+      description: See https://developer.kurtkanaskie.net/docs/get-started-authoriztion-code
       flows: 
         authorizationCode:
-          tokenUrl: https://api-test.kurtkanaskie.net/okta-trial/v1/oauth/token
-          authorizationUrl: https://api-test.kurtkanaskie.net/okta-trial/v1/oauth/authorize
+          tokenUrl: https://api-test.kurtkanaskie.net/oidc-google/v1/oauth/token
+          authorizationUrl: https://api-test.kurtkanaskie.net/oidc-google/v1/oauth/authorize
           scopes: {}
   schemas:
     ErrorResponse:

@@ -249,7 +249,7 @@ NOTE: the use of config.dir
 ## Bottom line
 
 ### All at once using resources dir, run health tests
-* mvn -Ptraining-test install -Ddeployment.suffix= -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dapi.testtag=@health
+* mvn -P test install -Ddeployment.suffix= -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dapi.testtag=@health
 
 ## Integrated Portal Spec
 * mvn -P test apigee-config:specs -Dapigee.config.options=update -Dapigee.config.dir=resources/edge
