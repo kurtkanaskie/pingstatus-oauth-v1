@@ -276,7 +276,7 @@
 							<value>${oauth.basepath}</value>
 						</replacement>
 						<replacement>
-							<token>@description</token>
+							<token>@DESCRIPTION</token>
 							<value>commit ${commit} from ${branch} branch by ${user.name}</value>
 						</replacement>
 						<replacement>

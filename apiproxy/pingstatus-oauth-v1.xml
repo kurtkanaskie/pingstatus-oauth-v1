@@ -4,7 +4,7 @@
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1556038936062</CreatedAt>
     <CreatedBy>kurtkanaskie+jenkins@google.com</CreatedBy>
-    <Description>Proxy to test OAuth access using any OAuth proxy, added FC-CORS. commit  from a local branch by kurtkanaskie</Description>
+    <Description>@DESCRIPTION</Description>
     <DisplayName>pingstatus-oauth-v1</DisplayName>
     <LastModifiedAt>1589827248953</LastModifiedAt>
     <LastModifiedBy>defaultUser</LastModifiedBy>
