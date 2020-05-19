@@ -58,6 +58,12 @@
 				<user.username>demouser</user.username>
 				<user.password>demouser1</user.password>
 				<api.testtag>@errorHandling,@health,@wip,@mock</api.testtag>
+				<portal.url>https://dev-amer-demo13.pantheonsite.io</portal.url><!-- URL of the developer portal. -->
+				<portal.username>${PortalUsername}</portal.username><!-- Username for the developer portal. -->
+				<portal.password>${PortalPassword}</portal.password><!-- Password for the developer portal. -->
+				<portal.format>yaml</portal.format><!-- Format of the OpenAPI specs. json|yaml -->
+				<portal.api.doc.format>basic_html</portal.api.doc.format><!-- Format in the portal. Values: basic_html, restricted_html, full_html -->
+				<portal.directory>./target/resources/specs</portal.directory> <!-- Directory where OpenAPI specs are accessible. Using ./specs for sample -->
 			</properties>
 		</profile>
 		<profile>
@@ -381,7 +387,26 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>   
+			</plugin>
+
+			<!-- apigee Smartdocs API Specs for Drupal-->
+			<plugin>
+				<groupId>com.apigee.smartdocs.config</groupId>
+				<artifactId>apigee-smartdocs-maven-plugin</artifactId>
+				<version>2.0.0</version>
+				<configuration>
+					<skip>${skip.smartdocs}</skip>
+				</configuration>
+				<executions>
+					<execution>
+						<id>smartdocs-deploy</id>
+						<phase>install</phase>
+						<goals>
+							<goal>apidoc</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> 
 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>

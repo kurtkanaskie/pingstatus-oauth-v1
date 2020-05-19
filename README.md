@@ -31,7 +31,7 @@ Jenkins projects are set up to run using Maven and Maven runs via configurations
 #### Test locally
 Set your ~/.m2/settings.xml
 ##### Initial build and deploy to currencty-"yourusername"v1
-* mvn -X install -Ptest -Dcommit=local -Dbranch=feature/jira1 
+* mvn -X install -Ptest -Dcommit=local -Dbranch=feature/jira1
 ##### Run unit tests and integration tests
 * mvn process-resources exec:exec@unit -Ptest
 * mvn process-resources exec:exec@integration -Ptest
@@ -74,7 +74,7 @@ Or using this:
 
 ## Maven
 ### Jenkins Commands
-The Jenkins build server runs Maven with this command for each of the feature branches. 
+The Jenkins build server runs Maven with this command for each of the feature branches.
 
 ```
 mvn -Pmy-test clean install -Dapi.testtag=@intg,@health
@@ -104,10 +104,10 @@ In each source directory there is a `package.json` file that holds the required 
 
 
 ## Running Tests Locally
-Often it is necessary to interate over tests for a feature development. Since Apickli/Cucumber tests are mostly text based, its easy to do this locally. 
+Often it is necessary to interate over tests for a feature development. Since Apickli/Cucumber tests are mostly text based, its easy to do this locally.
 Here are the steps:
 1 Install your feature proxy to Apigee if you are creating a new feature, otherwise just get a copy of the exising proxy you are building tests for.
-2 Run Maven to copy resources and "replace" things. 
+2 Run Maven to copy resources and "replace" things.
     * `mvn -P test clean process-resources`
 3 Run tests by tag or by feature file
     * cucumberjs target/test/apickli/features --tags @intg
@@ -180,7 +180,7 @@ NOTE: For some reason the latest cucumber (2.3.4) doesnt work with apickli-gherk
 * diff -q --suppress-common-lines -r --side-by-side apiproxy-prev apiproxy -W 240
 * diff --suppress-common-lines -r --side-by-side apiproxy-prev apiproxy -W 240
 
-### Maven $HOME/.m2/settings.xml 
+### Maven $HOME/.m2/settings.xml
 ```
 <profile>
             <id>test</id>
@@ -251,5 +251,13 @@ NOTE: the use of config.dir
 ### All at once using resources dir, run health tests
 * mvn -P test install -Ddeployment.suffix= -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dapi.testtag=@health
 
-## Integrated Portal Spec
-* mvn -P test apigee-config:specs -Dapigee.config.options=update -Dapigee.config.dir=resources/edge
+### Just update the Drupal 8 API Specs
+* mvn -P test process-resources apigee-smartdocs:apidoc -Dapigee.smartdocs.config.options=update -Ddeployment.suffix=
+
+### Just update the Integrated Portal API Specs
+Via process-resources after replacements or when in target hasn't been cleaned
+* mvn -X -P test process-resources apigee-config:specs -Dapigee.config.options=update -Ddeployment.suffix= -Dskip.clean=true -Dapigee.config.dir=target/resources/edge
+* mvn -P test -Dapigee.config.options=update apigee-config:specs -Dapigee.config.dir=target/resources/specs -Dapigee.config.dir=target/resources/edge
+
+Via the source without replacements
+* mvn -P test -Dapigee.config.options=update apigee-config:specs -Dapigee.config.dir=resources/edge
