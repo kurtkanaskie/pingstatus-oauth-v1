@@ -4,9 +4,9 @@ info:
   title: pingstatus-oauth-v1
   description: |
     Health checks for proxy and target backend.
-    * Client Credentials Integrated: TUZybEe4SrLfYB6RivZJ2yVzY6CBS7LW SfLdAODuAtrlPsZt
-    * Client Credentials Drupal 8:   Xq7RATcIDaUkhxGNEQOxpdugZcPa8m6R xz87RzBohOGSGlkA
-    * Person Credentials: demouser demouser1
+    * Client Credentials Integrated: TUZybEe4SrLfYB6RivZJ2yVzY6CBS7XX XXXXXXXXXXXXXXXX
+    * Client Credentials Drupal 8:   Xq7RATcIDaUkhxGNEQOxpdugZcPa8mXX XXXXXXXXXXXXXXXX
+    * Person Credentials Password:   demouser demouser1
     * Person Credentials Authorization Code: per IdP
   contact:
     email: kurtkanaskie@google.com
