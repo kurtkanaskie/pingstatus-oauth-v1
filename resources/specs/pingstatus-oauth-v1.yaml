@@ -9,15 +9,16 @@ info:
     * Client Credentials
     * Password
     * Authorization Code
+
     
     Details:
     * Integrated Portal
-      * App Credentials: TUZybEe4SrLfYB6RivZJ2yVzY6CBS7XX XXXXXXXXXXXXXXXX
+      * App Credentials: TUZybEe4SrLfYB6RivZJ2yVzY6CBS7LW SfLdAODuAtrlPsZt
       * Callback URL: https://developer.kurtkanaskie.net/oauth_redirect
     
     
     * Drupal 8:
-      * App Credentials: Xq7RATcIDaUkhxGNEQOxpdugZcPa8mXX XXXXXXXXXXXXXXXX
+      * App Credentials: Xq7RATcIDaUkhxGNEQOxpdugZcPa8m6R xz87RzBohOGSGlkA
       * Callback URL: http://dev-amer-demo13.pantheonsite.io/oauth_redirect
 
 
