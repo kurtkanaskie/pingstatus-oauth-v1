@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="AM-AddCORS" version="SHA-512:6d7181f27221c54b4ea44a7df67af763751362bbbdd23fbebf0d145c92a42c6a22917cad810702233f32fe54bf3e4519c276035da413e90dbe68537ef718ac68"/>
+        <VersionInfo resourceName="AM-Debug" version="SHA-512:f8b2c061daf8a765f0ccf3f733e134aa39ce0c32f0c3f53e66566f4a95a88698aef62a34e0c0d400ca9b926c03a32a0d7fe3d620e618f407519f53dfb98d83eb"/>
+        <VersionInfo resourceName="AM-create-ping-response" version="SHA-512:d3b52d5ae3edfb4a0c597c5db1144aa5b2da2a01358b650e5ea34edd87b31185a158e54c01f284534bea95e508f7100d4e9ec36a2ce13248a2de38277e5c27df"/>
+        <VersionInfo resourceName="AM-create-status-response" version="SHA-512:dd92c4fdbb27b0c2b77813ac82d9f9e0b2faa3a165a479ce5e4f45343942f1d4610b0de62014e12c3fc4d3c2351c4a73baf57cf80756bb4059fdff4a059b07cb"/>
+        <VersionInfo resourceName="AM-set-get-status-pathsuffix" version="SHA-512:01b9f23105b9dba29ebd72bd3f7dcd626f4e5f4e3356d666f34fb778a3791c6c17920ef29e970360459ba3f971ed9db216690d158cb77484caf13b0be90101a5"/>
+        <VersionInfo resourceName="AM-set-proxy-default-error-vars" version="SHA-512:7e1d96e54798dddd3cfb8d396e1c47172761b479931e2acaee7eb697f625bf877cd0082316ef0f5412d228db72c79327f67f2766e0faf76ecb097d701ccbb965"/>
+        <VersionInfo resourceName="AM-set-service-unavailable-error-variables" version="SHA-512:de04ef5d1abfa541f101f1198e09262df735dd168c51afa35566bfc56b1f422f2dd8587415dbd21ef56c0bc9bab5695c8332e2d1b4b1d52ae10ae3bf9c53e6bb"/>
+        <VersionInfo resourceName="AM-set-standard-error-response" version="SHA-512:99e749ddac508a798b8ab2dda8c4733177315a6dd87989bf5795f19b822f2ef2406e23c59c1591ea8dd46ceca441de7694c1c634ddecb2cfa5e19f52987fc050"/>
+        <VersionInfo resourceName="AM-target-headers" version="SHA-512:a91c6ba05b48a492d91e1121ca95285770aa25be20cc2008e4d9f2d1d8d0bbc5c74a3c2dc53c6fa268dca9b9b379c8037de0d754360c21fbbe5e821f5332f436"/>
+        <VersionInfo resourceName="JS-proxy-fault-rules" version="SHA-512:9a0a8489863c543f0d2ef35428a9ef590e1979826a2d66ac98bb6fcb1bbe62d88c927c6b4f499c8234c27c3e7a60dbd0d6ccfa7b458d26aed049dbdede1f5507"/>
+        <VersionInfo resourceName="JS-set-time-data" version="SHA-512:721be34da1651003f6e9c52d9ce7842e54b637015d08f91fe69885716be0be06775cb89c2bab920f7ae2cfe91d4680de9059676cf9955b9acdff2fd22158afad"/>
+        <VersionInfo resourceName="KV-config-values" version="SHA-512:748d47136481d49cb6b25acf03f76008d7e0468b3b9f50d8002ffd0da9f594f610062d9cedfb091c5bd351a94c82d85cfa52e45d21f7980d0ca665701fd7dbaa"/>
+        <VersionInfo resourceName="OA-verify-access-token" version="SHA-512:25094021da14a5f5ae22e4c9073f51e0d360b236cfe6a1a0a9bd2513aeb7a506b6145f0b3d4893972d88a6d8de7b9283b2d0ea4fd2808dd0ef382ce9d84eb683"/>
+        <VersionInfo resourceName="RF-path-suffix-not-found" version="SHA-512:12c3d20f0aadc6f56576dd98c5940bb2bd28b2aa86ab5da8947c9ea08f877586eea21dc7edcddd378fedf61ebe6e1f84c449f053c4d7e8c645c57a982491aa7c"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:24cccbd449387cbe10e7e90d2bf63849b65a9305fcf3323b1a001abc3e2ce020ea5a18fc56f13f213e56412e366e598dc20d5ffa2b89266198c1de3c0cb0842f"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="jsc://JS-proxy-fault-rules.js" version="SHA-512:92c7e5bf507bf301d8d49aecf0624e7078dbe8f4cdaa671e514fa374ece45ed667b9e62ef237de9ca60de3f23ddb4fddd55a8453e3d3482bec5aa68b31e9eb00"/>
+        <VersionInfo resourceName="jsc://JS-set-time-data.js" version="SHA-512:ef7da438bdccb0b97bb2cfcf5c33e76b411edd431d2d312321784d48c5ad809158ab32a041ec2a73395cd6918e049e64c04b1b4b95e3d01efdae158c37962b82"/>
+        <VersionInfo resourceName="jsc://JS-verify-client-cn.js" version="SHA-512:321fe8b8f491fbf187bb97af35e2abd3cb8edc3c5584c395b9199222cee4654ed010ee712eb304cebe9220f0174c6fefd6fd97a272e8ced593620ea8b1bf5c5c"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:0daeb7c87495010cd655276f1d8fc1fa86e42010faf5de07648f4c2822c8568e149842360eebe203e5b8e8391fea83835f072e35aa37faefb44f568f504f22bf"/>
+    </TargetEndpoints>
+</Manifest>
