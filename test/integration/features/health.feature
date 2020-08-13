@@ -1,4 +1,4 @@
-@health
+@intg @health
 Feature: API proxy health
 	As API administrator
 	I want to monitor Apigee proxy and backend service health

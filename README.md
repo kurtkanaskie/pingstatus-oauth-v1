@@ -251,6 +251,9 @@ NOTE: the use of config.dir
 ### All at once using resources dir, run health tests
 * mvn -P test install -Ddeployment.suffix= -Dapigee.config.options=update -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dapi.testtag=@health
 
+### Process resources, export Apps and run integration tests
+mvn -P test process-resources apigee-config:exportAppKeys exec:exec@integration -Ddeployment.suffix= -Dskip.clean=true -Dapigee.config.dir=target/resources/edge -Dapigee.config.exportDir=target/test/integration -Dapi.testtag=@intg
+
 ### Just update the Drupal 8 API Specs
 * mvn -P test process-resources apigee-smartdocs:apidoc -Dapigee.smartdocs.config.options=update -Ddeployment.suffix=
 
