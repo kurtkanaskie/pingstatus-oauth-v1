@@ -1,9 +1,14 @@
 {
   "name": "pingstatus",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:kurtkanaskie/pingstatus-oauth-v1.git"
+  },
+  "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
     "apickli": "^1.7.4",
-    "apigeelint": "^0.4.3",
+    "apigeelint": "^0.4.6",
     "bluebird": "^3.3.5",
     "chai": "^3",
     "chai-fuzzy": "^1",
