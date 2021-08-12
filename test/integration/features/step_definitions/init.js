@@ -5,7 +5,7 @@ var apickli = require('apickli');
 var config = require('../../test-config.json');
 var apps = require('../../devAppKeys.json');
 
-console.log('apiconfig: [' + config.apiconfig.domain + ', ' + config.apiconfig.basepath + ']');
+console.log('CURL TO: [' + config.apiconfig.domain + config.apiconfig.basepath + ']');
 
 module.exports = function() {
     // cleanup before every scenario
@@ -15,7 +15,7 @@ module.exports = function() {
         this.apickli.storeValueInScenarioScope("apiproxy", config.apiconfig.apiproxy);
         this.apickli.storeValueInScenarioScope("basepath", config.apiconfig.basepath);
         getCredsFromExport(config.apiconfig.app, config.apiconfig.product);
-        // console.log( "KEYS: " + keys.clientId + " " + keys.clientSecret);
+        console.log( "KEYS: " + keys.clientId + " " + keys.clientSecret);
         this.apickli.storeValueInScenarioScope("clientId", keys.clientId);
         this.apickli.storeValueInScenarioScope("clientSecret", keys.clientSecret);
         this.apickli.storeValueInScenarioScope("oauthDomain", config.apiconfig.oauthDomain );
